@@ -39,7 +39,6 @@ jobs:
       - name: Create Release And Upload APKs
         uses: ncipollo/release-action@v1
         with:
-         #token: ${{ secrets.GH_ACCESS_TOKEN }}
          tag: README${{ github.ref }}.md # Customize the artifact name
-          artifacts: README.md
+         artifacts: README.md
          generateReleaseNotes: true
