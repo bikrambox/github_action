@@ -19,22 +19,23 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-           tag_name: ${{ github.ref }}
-           release_name: Release ${{ github.ref }}
+           tag_name: ${{ github.sha }} # Use the commit hash of the main branch as the tag name
+           release_name: Release ${{ github.sha }} # Use the commit hash as the release name
            body: |
              Release created automatically by GitHub Actions.
            draft: false
            prerelease: false
 
+
       - name: Upload APK as Release Asset
         uses: actions/upload-artifact@v3
         with:
-          name: README${{ github.ref }}.md # Customize the artifact name
+          name: README${{ github.sha }}.md # Customize the artifact name
           path: README.md
 
-      - name: Create Release And Upload APKs
-        uses: ncipollo/release-action@v1
-        with:
-          tag: README${{ github.ref }}.md # Customize the artifact name
-          artifacts: README.md
-          generateReleaseNotes: true
+      # - name: Create Release And Upload APKs
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     tag: README${{ github.ref }}.md # Customize the artifact name
+      #     artifacts: README.md
+      #     generateReleaseNotes: true
