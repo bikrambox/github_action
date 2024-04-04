@@ -5,8 +5,21 @@ on:
     branches: [ "main" ]
     tags:
       - 'v*' # Trigger on tag push
+
+
+jobs:
+  get_latest_version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.set_version.outputs.version }}
+    steps:
+      - name: Set version number
+        id: set_version
+        run: echo "::set-output name=version::v$(($(git tag -l 'v*' | wc -l) + 1))"
+
 jobs:
   create_release:
+    needs: get_latest_version
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -19,8 +32,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-           tag_name: ${{ github.sha }} # Use the commit hash of the main branch as the tag name
-           release_name: Release ${{ github.sha }} # Use the commit hash as the release name
+           tag_name: ${{ needs.get_latest_version.outputs.version }}
+           release_name: Release ${{ needs.get_latest_version.outputs.version }}   
            body: |
              Release created automatically by GitHub Actions.
            draft: false
@@ -30,7 +43,7 @@ jobs:
       - name: Upload APK as Release Asset
         uses: actions/upload-artifact@v3
         with:
-          name: README${{ github.sha }}.md # Customize the artifact name
+          name: README${{ needs.get_latest_version.outputs.version }}.md # Customize the artifact name
           path: README.md
 
       # - name: Create Release And Upload APKs
