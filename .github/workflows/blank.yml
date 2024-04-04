@@ -19,9 +19,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
                                         
       with:
-        # tag_name: ${{ github.sha }}                                
+        tag_name: "v2"                               
         release_name: Release ${{ github.sha }}
-        commit_sha: ${{ github.sha }}
+        # commit_sha: ${{ github.sha }}
         draft: false
         prerelease: false
                                                                                                           
