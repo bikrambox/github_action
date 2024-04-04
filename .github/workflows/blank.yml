@@ -28,16 +28,16 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run installer 🛻
-        run: sudo apt install -y fdroidserver neofetch     &> /dev/null
+        run: sudo apt install -y neofetch     &> /dev/null
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: pwd && ls -al && df -h && lsb_release -a && fdroidserver --help
+        run: pwd && ls -al && df -h && lsb_release -a && neofetch
 
 
       # Runs a single command using the runners shell
       - name: Let's start FroidServer 🔥
-        run: mkdir fdroidhere && git clone https://gitlab.com/fdroid/fdroidserver.git fdroidhere && export PATH="$PATH:$PWD/fdroidhere" && echo $PATH
+        run: mkdir fdroidserver && git clone https://gitlab.com/fdroid/fdroidserver.git fdroidserver && export PATH="$PATH:$PWD/fdroidserver" && echo $PATH && fdroidserver --help
 
 
       # Runs a set of commands using the runners shell
