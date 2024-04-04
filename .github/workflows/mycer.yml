@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Set version number
         id: set_version
-        run: echo "::set-output name=version::v2"
+        run: echo "::set-output name=version::v3"
 
   create_release:
     needs: get_latest_version
