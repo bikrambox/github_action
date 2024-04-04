@@ -26,16 +26,21 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      # # Runs a single command using the runners shell
+      # - name: Run installer 🛻
+      #   run: |
+      #     sudo apt install -y neofetch git
+      #     git --version
+      #     neofetch --version
       # Runs a single command using the runners shell
-      - name: Run installer 🛻
-        run: |
-          sudo apt install -y neofetch git
-          git --version
-          neofetch --version
+      - uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: git neofetch
+          version: 1.0
 
       # Runs a single command using the runners shell
       - name: Run a one-line script 🚂
-        run: pwd && ls -al && df -h && lsb_release -a && neofetch
+        run: git --version && neofetch --version && pwd && ls -al && df -h && lsb_release -a && neofetch
 
 
       # Runs a single command using the runners shell
