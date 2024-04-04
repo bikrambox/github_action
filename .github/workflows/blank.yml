@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     # Ubuntu 20.04 set here
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -44,7 +44,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script II 🚂
-        run: python3 -m pip install gitpython defusedxml ruamel 
+        run: python3 -m pip install gitpython defusedxml ruamel.yaml==0.15.34 
 
       # Runs a single command using the runners shell
       - name: Let's start FroidServer 🔥
