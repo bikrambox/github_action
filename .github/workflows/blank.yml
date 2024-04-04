@@ -28,7 +28,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run installer 🛻
-        run: sudo apt install -y neofetch git     &> /dev/null
+        run: |
+          sudo apt install -y neofetch git
+          git --version
+          neofetch --version
 
       # Runs a single command using the runners shell
       - name: Run a one-line script 🚂
