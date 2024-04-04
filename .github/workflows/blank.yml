@@ -35,7 +35,7 @@ jobs:
       # Runs a single command using the runners shell
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: git neofetch
+          packages: git neofetch fdroidserver
           version: 1.0
 
       # Runs a single command using the runners shell
@@ -46,11 +46,16 @@ jobs:
       - name: Run a one-line script II 🚂
         run: python3 -m pip install gitpython defusedxml ruamel.yaml==0.15.34 
 
+      # # Runs a single command using the runners shell
+      # - name: Let's start FroidServer 🔥
+      #   run: |
+      #     mkdir fdroidserver && git clone https://gitlab.com/fdroid/fdroidserver.git fdroidserver
+      #     export PATH="$PATH:$PWD/fdroidserver" && echo $PATH
+      #     fdroid --help
+
       # Runs a single command using the runners shell
       - name: Let's start FroidServer 🔥
         run: |
-          mkdir fdroidserver && git clone https://gitlab.com/fdroid/fdroidserver.git fdroidserver
-          export PATH="$PATH:$PWD/fdroidserver" && echo $PATH
           fdroid --help
 
 
