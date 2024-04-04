@@ -33,7 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
            tag_name: ${{ needs.get_latest_version.outputs.version }}
-           release_name: Release ${{ needs.get_latest_version.outputs.version }}   
+           release_name: Release ${{ needs.get_latest_version.outputs.version }}
            body: |
              Release created automatically by GitHub Actions.
            draft: false
