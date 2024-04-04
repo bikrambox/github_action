@@ -46,7 +46,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: README_${{ needs.get_latest_version.outputs.version }}.md # Customize the artifact name
-          path: README.md
+          path: /home/runner/work/github_action/github_action/README.md
 
       # - name: Create Release And Upload APKs
       #   uses: ncipollo/release-action@v1
