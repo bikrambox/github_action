@@ -57,6 +57,11 @@ jobs:
       - name: Let's start FroidServer 🔥
         run: |
           fdroid --help
+          git clone https://gitlab.com/fdroid/fdroiddata
+          cd fdroiddata
+          fdroid init
+          fdroid readmeta
+          
 
 
       # Runs a set of commands using the runners shell
