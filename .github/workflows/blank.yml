@@ -33,7 +33,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run another one-line script
-        run: mkdir fdroidhere && cd fdroidhere && git clone https://gitlab.com/fdroid/fdroidserver.git && export PATH="$PATH:$PWD/fdroidserver" && echo PATH
+        run: mkdir fdroidhere && cd fdroidhere && git clone https://gitlab.com/fdroid/fdroidserver.git && export PATH="$PATH:$PWD/fdroidserver" && echo $PATH
 
       # Runs a single command using the runners shell
       - name: Run installer
