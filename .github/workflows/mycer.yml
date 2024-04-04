@@ -43,7 +43,7 @@ jobs:
       - name: Upload APK as Release Asset
         uses: actions/upload-artifact@v3
         with:
-          name: README${{ needs.get_latest_version.outputs.version }}.md # Customize the artifact name
+          name: README_${{ needs.get_latest_version.outputs.version }}.md # Customize the artifact name
           path: README.md
 
       # - name: Create Release And Upload APKs
