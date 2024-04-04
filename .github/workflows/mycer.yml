@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-                                          
-# No need to build the APK file, since it's already in the repository
 
         # Create a new GitHub release
       - name: Create Release
@@ -28,13 +26,11 @@ jobs:
            draft: false
            prerelease: false
 
-# Upload the APK file as an artifact
       - name: Upload APK as Release Asset
         uses: actions/upload-artifact@v3
         with:
           name: README${{ github.ref }}.md # Customize the artifact name
           path: README.md
-
 
       - name: Create Release And Upload APKs
         uses: ncipollo/release-action@v1
@@ -42,4 +38,3 @@ jobs:
           tag: README${{ github.ref }}.md # Customize the artifact name
           artifacts: README.md
           generateReleaseNotes: true
-          
