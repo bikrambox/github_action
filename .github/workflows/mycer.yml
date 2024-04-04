@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Set version number
         id: set_version
-        run: echo "::set-output name=version::v4"
+        run: echo "::set-output name=version::v5"
 
   create_release:
     needs: get_latest_version
@@ -42,15 +42,15 @@ jobs:
            prerelease: false
 
 
-      - name: Upload APK as Release Asset
-        uses: actions/upload-artifact@v3
-        with:
-          name: README_${{ needs.get_latest_version.outputs.version }}.md # Customize the artifact name
-          path: /home/runner/work/github_action/github_action/README.md
-
-      # - name: Create Release And Upload APKs
-      #   uses: ncipollo/release-action@v1
+      # - name: Upload APK as Release Asset
+      #   uses: actions/upload-artifact@v3
       #   with:
-      #     tag: README${{ github.ref }}.md # Customize the artifact name
-      #     artifacts: README.md
-      #     generateReleaseNotes: true
+      #     name: README_${{ needs.get_latest_version.outputs.version }}.md # Customize the artifact name
+      #     path: /home/runner/work/github_action/github_action/README.md
+
+      - name: Create Release And Upload APKs
+        uses: ncipollo/release-action@v1
+        with:
+          tag: README_${{ needs.get_latest_version.outputs.version }}.md # Customize the artifact name
+          artifacts: /home/runner/work/github_action/github_action/README.md
+          generateReleaseNotes: true
