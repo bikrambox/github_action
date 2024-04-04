@@ -33,7 +33,6 @@ jobs:
       #     git --version
       #     neofetch --version
       # Runs a single command using the runners shell
-      - name: Run Installer 🚂
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: git neofetch fdroidserver
@@ -43,9 +42,9 @@ jobs:
       - name: Run a one-line script 🚂
         run: pwd && ls -al && df -h && lsb_release -a && neofetch && python -V && python3 -V 
 
-      # # Runs a single command using the runners shell
-      # - name: Run a one-line script II 🚂
-      #   run: python3 -m pip install gitpython defusedxml ruamel.yaml==0.15.34 
+      # Runs a single command using the runners shell
+      - name: Run a one-line script II 🚂
+        run: python3 -m pip install gitpython defusedxml 
 
       # # Runs a single command using the runners shell
       # - name: Let's start FroidServer 🔥
