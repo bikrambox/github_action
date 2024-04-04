@@ -24,6 +24,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Run a one-line script 🚂
+              run: pwd && ls -al
+
         # Create a new GitHub release
       - name: Create Release
         id: create_release
