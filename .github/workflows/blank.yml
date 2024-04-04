@@ -21,6 +21,7 @@ jobs:
       with:
         # tag_name: ${{ github.sha }}                                
         release_name: Release ${{ github.sha }}
+        commit_sha: ${{ github.sha }}
         draft: false
         prerelease: false
                                                                                                           
