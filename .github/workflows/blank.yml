@@ -44,7 +44,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script II 🚂
-        run: python3 -m pip install gitpython defusedxml
+        run: python3 -m pip install gitpython defusedxml ruamel 
 
       # Runs a single command using the runners shell
       - name: Let's start FroidServer 🔥
