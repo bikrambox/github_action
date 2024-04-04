@@ -16,7 +16,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}                          
       with:
-        tag_name: "v10"                               
+        # tag_name: "v10"                               
+        tag_name: ${{ github.sha::6 }}
         release_name: Release ${{ github.sha }}
         # commit_sha: ${{ github.sha }}
         draft: false
