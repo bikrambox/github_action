@@ -2,9 +2,9 @@ name: Create Release with Artifact
 
 on:
   push:
+    branches: [ "main" ]
     tags:
       - 'v*' # Trigger on tag push
-
 jobs:
   create_release:
     runs-on: ubuntu-latest
