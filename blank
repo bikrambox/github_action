@@ -59,9 +59,12 @@ jobs:
           fdroid --help
           git clone https://gitlab.com/fdroid/fdroiddata
           cd fdroiddata
+          pwd
+          echo "FDROID INIT"
           fdroid init
+          echo "FDROID Read"
           fdroid readmeta
-          
+
 
 
       # Runs a set of commands using the runners shell
