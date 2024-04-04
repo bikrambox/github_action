@@ -40,7 +40,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script 🚂
-        run: git --version && neofetch --version && pwd && ls -al && df -h && lsb_release -a && neofetch
+        run: pwd && ls -al && df -h && lsb_release -a && neofetch
 
 
       # Runs a single command using the runners shell
