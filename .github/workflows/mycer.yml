@@ -17,7 +17,7 @@ jobs:
         id: set_version
         run: echo "::set-output name=version::v$(($(git tag -l 'v*' | wc -l) + 1))"
 
-jobs:
+
   create_release:
     needs: get_latest_version
     runs-on: ubuntu-latest
