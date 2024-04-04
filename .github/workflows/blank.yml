@@ -19,7 +19,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
                                         
       with:
-        tag_name: "v7"                               
+        tag_name: "v8"                               
         release_name: Release ${{ github.sha }}
         # commit_sha: ${{ github.sha }}
         draft: false
@@ -33,4 +33,4 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./README.md
         asset_name: README.md
-        asset_content_type: text/markdown
+        # asset_content_type: text/markdown
