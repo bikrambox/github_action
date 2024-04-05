@@ -41,7 +41,7 @@ jobs:
     #       # AeroInsta_V24.0.0_Clone_DEFAULT__aeromods.app__.apk
         
     - name: Let's start Listing 🔥
-      run: pwd && ll -alh
+      run: pwd && ls -alh
          
     - name: Upload Release Asset II
       uses: actions/upload-release-asset@v1
