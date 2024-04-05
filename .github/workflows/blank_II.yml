@@ -60,15 +60,15 @@ jobs:
 
 
 
-    # - name: Upload Release Asset III
-    #   uses: actions/upload-release-asset@v1
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-    #   with:
-    #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-    #     asset_path: ./Duolingo_5.144.3_Beta_Unlocked_universal.apk
-    #     asset_name: Duolingo_5.144.3_Beta_Unlocked_universal.apk
-    #     asset_content_type: application/zip
+    - name: Upload Release Asset III
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./Duolingo_5.144.3_Beta_Unlocked_universal.apk
+        asset_name: Duolingo_5.144.3_Beta_Unlocked_universal.apk
+        asset_content_type: application/zip
 
     # - name: Upload Release Asset IV
     #   uses: actions/upload-release-asset@v1
