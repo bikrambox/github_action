@@ -40,6 +40,9 @@ jobs:
     #     files: Duolingo_5.144.3_Beta_Unlocked_universal.apk
     #       # AeroInsta_V24.0.0_Clone_DEFAULT__aeromods.app__.apk
         
+    - name: Let's start Listing 🔥
+      run: pwd && ll -alh
+         
     - name: Upload Release Asset II
       uses: actions/upload-release-asset@v1
       env:
@@ -50,6 +53,9 @@ jobs:
         asset_name: AeroInsta_V24.0.0_Clone_DEFAULT__aeromods.app__.apk
         asset_content_type: application/zip
         
+
+
+
 
     # - name: Upload Release Asset III
     #   uses: actions/upload-release-asset@v1
