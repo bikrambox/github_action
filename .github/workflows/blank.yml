@@ -35,11 +35,10 @@ jobs:
 
     - name: Upload Release Asset II
       uses: actions/upload-release-asset@v1
-      if: startsWith(github.ref, 'refs/tags/')
+      # if: startsWith(github.ref, 'refs/tags/')
       with:
-        files: |
-          Duolingo_5.144.3_Beta_Unlocked_universal.apk
-          AeroInsta_V24.0.0_Clone_DEFAULT__aeromods.app__.apk
+        files: Duolingo_5.144.3_Beta_Unlocked_universal.apk
+          # AeroInsta_V24.0.0_Clone_DEFAULT__aeromods.app__.apk
         
     # - name: Upload Release Asset II
     #   uses: actions/upload-release-asset@v1
