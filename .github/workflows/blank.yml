@@ -23,32 +23,32 @@ jobs:
         draft: false
         prerelease: false
 
-    - name: Upload Release Asset I
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./com.zionhuang.music_19.apk
-        asset_name: com.zionhuang.music_19.apk
-        asset_content_type: application/zip
-
-    - name: Upload Release Asset II
-      uses: actions/upload-release-asset@v1
-      # if: startsWith(github.ref, 'refs/tags/')
-      with:
-        files: Duolingo_5.144.3_Beta_Unlocked_universal.apk
-          # AeroInsta_V24.0.0_Clone_DEFAULT__aeromods.app__.apk
-        
-    # - name: Upload Release Asset II
+    # - name: Upload Release Asset I
     #   uses: actions/upload-release-asset@v1
     #   env:
     #     GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
     #   with:
     #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-    #     asset_path: ./AeroInsta_V24.0.0_Clone_DEFAULT__aeromods.app__.apk
-    #     asset_name: AeroInsta_V24.0.0_Clone_DEFAULT__aeromods.app__.apk
+    #     asset_path: ./com.zionhuang.music_19.apk
+    #     asset_name: com.zionhuang.music_19.apk
     #     asset_content_type: application/zip
+
+    # - name: Upload Release Asset II
+    #   uses: actions/upload-release-asset@v1
+    #   # if: startsWith(github.ref, 'refs/tags/')
+    #   with:
+    #     files: Duolingo_5.144.3_Beta_Unlocked_universal.apk
+    #       # AeroInsta_V24.0.0_Clone_DEFAULT__aeromods.app__.apk
+        
+    - name: Upload Release Asset II
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./AeroInsta_V24.0.0_Clone_DEFAULT__aeromods.app__.apk
+        asset_name: AeroInsta_V24.0.0_Clone_DEFAULT__aeromods.app__.apk
+        asset_content_type: application/zip
 
     # - name: Upload Release Asset III
     #   uses: actions/upload-release-asset@v1
